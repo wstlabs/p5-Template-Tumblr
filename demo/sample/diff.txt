@@ -1,0 +1,184 @@
+*** o2.htm	Fri Oct 30 12:59:46 2009
+--- page.htm	Fri Oct 30 09:35:16 2009
+***************
+*** 8,13 ****
+--- 8,14 ----
+  	<link rel="icon" href="http://18.media.tumblr.com/avatar_ed2edc19affc_16.png"/>
+  	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://theoryofeverything.tumblr.com/rss"/>
+  	<meta name="viewport" content="width=775"/> <!-- iPhone -->
++ 
+  	<meta name="if:Show post notes" content ="1"/>
+  	<meta name="if:Enable text shadow" content ="1"/>
+  	
+***************
+*** 288,294 ****
+  	ol.notes li.note blockquote a {
+      	text-decoration: 				none;
+  	}
+! 	/* custom CSS goes here */
+  	</style>
+  
+  
+--- 289,295 ----
+  	ol.notes li.note blockquote a {
+      	text-decoration: 				none;
+  	}
+! 	
+  	</style>
+  
+  
+***************
+*** 301,306 ****
+--- 302,308 ----
+  
+  		<div id="meta-column">
+  			<ul id="navigation">
++ 
+  				<li><a href="/archive">Archive</a></li>
+  				<li><a href="http://theoryofeverything.tumblr.com/rss">Subscribe</a></li>
+  			</ul>
+***************
+*** 310,315 ****
+--- 312,318 ----
+  				All things to all people.
+  				
+  				<p>Theme by <a href="http://tumblr.quisby.net">nostrich</a>.</p>
++ 
+  			</div>
+  			
+  			<div class="search">
+***************
+*** 327,334 ****
+  				<p class="date"><a href="http://theoryofeverything.tumblr.com/post/227148220/quattuor">29th October 2009</a></p>
+  				<p class="type">Text  </p>
+  				<div class="clear"></div>
+! 				<h2><a href="http://theoryofeverything.tumblr.com/post/227148220/quattuor">Quattuor</a></h2>
+  				<p><img src="http://media.tumblr.com/tumblr_ksai958LQr1qa64s0.jpg"/></p>
+  <p>phaselus ille quem videtis hospites</p>
+  <p>ait fuisse navium celerrimus</p>
+  <p>neque ullus natantis impetum trabis</p>
+--- 330,338 ----
+  				<p class="date"><a href="http://theoryofeverything.tumblr.com/post/227148220/quattuor">29th October 2009</a></p>
+  				<p class="type">Text  </p>
+  				<div class="clear"></div>
+! 				<h2><a href="http://theoryofeverything.tumblr.com/post/227148220/quattuor">quattuor</a></h2>
+  				<p><img src="http://media.tumblr.com/tumblr_ksai958LQr1qa64s0.jpg"/></p>
++ 
+  <p>phaselus ille quem videtis hospites</p>
+  <p>ait fuisse navium celerrimus</p>
+  <p>neque ullus natantis impetum trabis</p>
+***************
+*** 338,343 ****
+--- 342,348 ----
+  <p>negare litus insulasve Cycladas</p>
+  <p>Rhodumque nobilem horridamque Thraciam</p>
+  <p>Propontida trucemve Ponticum sinum</p>
++ 
+  <p>ubi iste post phaselus antea fuit</p>
+  <p>comata silva nam Cytorioin iugo</p>
+  <p>loquente saepe sibilum edidit coma</p>
+***************
+*** 347,352 ****
+--- 352,358 ----
+  <p>tuo stetisse dicit in cacumine</p>
+  <p>tuo imbuisse palmulas in aequore</p>
+  <p>et inde tot per impotentia freta</p>
++ 
+  <p>erum tulisse laeva sive dextera</p>
+  <p>vocaret aura sive utrumque Iuppiter</p>
+  <p>simul secundus incidisset in pedem</p>
+***************
+*** 385,392 ****
+  				<p class="date"><a href="http://theoryofeverything.tumblr.com/post/227142357/duo">29th October 2009</a></p>
+  				<p class="type">Text  </p>
+  				<div class="clear"></div>
+! 				<h2><a href="http://theoryofeverything.tumblr.com/post/227142357/duo">Duo</a></h2>
+  				<p>Passer,<sup></sup>deliciae meae puellae,</p>
+  <p>quicum ludere, quem in sinu tenere,</p>
+  <p>cui primum digitum dare appetenti</p>
+  <p>et acris solet incitare morsus,</p>
+--- 391,399 ----
+  				<p class="date"><a href="http://theoryofeverything.tumblr.com/post/227142357/duo">29th October 2009</a></p>
+  				<p class="type">Text  </p>
+  				<div class="clear"></div>
+! 				<h2><a href="http://theoryofeverything.tumblr.com/post/227142357/duo">duo</a></h2>
+  				<p>Passer,<sup></sup>deliciae meae puellae,</p>
++ 
+  <p>quicum ludere, quem in sinu tenere,</p>
+  <p>cui primum digitum dare appetenti</p>
+  <p>et acris solet incitare morsus,</p>
+***************
+*** 395,402 ****
+  <p>ut solaciolum sui doloris,</p>
+  <p>credo, ut tum gravis acquiescat ardor;</p>
+  <p>tecum<sup></sup>ludere sicut ipsa possem</p>
+- <p>et tristis animi levare curas!</p>
+  
+  				
+  			</div>
+  			
+--- 402,409 ----
+  <p>ut solaciolum sui doloris,</p>
+  <p>credo, ut tum gravis acquiescat ardor;</p>
+  <p>tecum<sup></sup>ludere sicut ipsa possem</p>
+  
++ <p>et tristis animi levare curas!</p>
+  				
+  			</div>
+  			
+***************
+*** 425,431 ****
+  				<p class="date"><a href="http://theoryofeverything.tumblr.com/post/227133157/unus">29th October 2009</a></p>
+  				<p class="type">Text  </p>
+  				<div class="clear"></div>
+! 				<h2><a href="http://theoryofeverything.tumblr.com/post/227133157/unus">Unus</a></h2>
+  				<p>cui dono lepidum novum libellum</p>
+  <p>arida modo pumice expolitum</p>
+  <p>Corneli tibi namque tu solebas</p>
+--- 432,439 ----
+  				<p class="date"><a href="http://theoryofeverything.tumblr.com/post/227133157/unus">29th October 2009</a></p>
+  				<p class="type">Text  </p>
+  				<div class="clear"></div>
+! 				<h2><a href="http://theoryofeverything.tumblr.com/post/227133157/unus">unus</a></h2>
+! 
+  				<p>cui dono lepidum novum libellum</p>
+  <p>arida modo pumice expolitum</p>
+  <p>Corneli tibi namque tu solebas</p>
+***************
+*** 434,442 ****
+  <p>omne aevum tribus explicare cartis</p>
+  <p>doctis Iuppiter et laboriosis</p>
+  <p>quare habe tibi quidquid hoc libelli</p>
+  <p>qualecumque quod o<sup></sup>patrona virgo</p>
+  <p>plus uno maneat perenne saeclo</p>
+- 
+  				
+  			</div>
+  			
+--- 442,450 ----
+  <p>omne aevum tribus explicare cartis</p>
+  <p>doctis Iuppiter et laboriosis</p>
+  <p>quare habe tibi quidquid hoc libelli</p>
++ 
+  <p>qualecumque quod o<sup></sup>patrona virgo</p>
+  <p>plus uno maneat perenne saeclo</p>
+  				
+  			</div>
+  			
+***************
+*** 473,477 ****
+  
+  	</div> <!-- container -->
+  
+! </body>
+  </html>
+--- 481,489 ----
+  
+  	</div> <!-- container -->
+  
+! <!-- BEGIN TUMBLR CODE -->
+! <iframe src="http://www.tumblr.com/dashboard/iframe?src=http%3A%2F%2Ftheoryofeverything.tumblr.com%2F" 
+! border="0" scrolling="no" width="324" height="25" allowTransparency="true"
+! frameborder="0" style="position:absolute; z-index:1337; top:0px; right:0px; border:0px;
+! background-color:transparent; overflow:hidden;" id="tumblr_controls"></iframe><!-- END TUMBLR CODE --></body>
+  </html>

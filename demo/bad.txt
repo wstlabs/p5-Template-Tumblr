@@ -1,0 +1,608 @@
+*** output/template.tt	Fri Oct 15 21:10:09 2010
+--- sample/template.tt	Thu Oct 14 20:30:41 2010
+***************
+*** 2,12 ****
+  	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+! 	{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+! 	<title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+! 	<link rel="icon" href="{Favicon}"/>
+! 	<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+  	<meta name="viewport" content="width=775"/> <!-- iPhone -->
+  	<meta name="if:Show post notes" content ="1"/>
+  	<meta name="if:Enable text shadow" content ="1"/>
+--- 2,12 ----
+  	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+! 	[% IF main.Description %]<meta name="description" content="[% main.MetaDescription %]" />[% END %]
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+! 	<title>[% main.Title %][% IF main.PostSummary %] - [% main.PostSummary %][% END %]</title>
+! 	<link rel="icon" href="[% main.Favicon %]"/>
+! 	<link rel="alternate" type="application/rss+xml" title="RSS" href="[% main.RSS %]"/>
+  	<meta name="viewport" content="width=775"/> <!-- iPhone -->
+  	<meta name="if:Show post notes" content ="1"/>
+  	<meta name="if:Enable text shadow" content ="1"/>
+***************
+*** 20,29 ****
+  	<style type="text/css">
+  	/* GLOBAL */
+  	body {
+! 		background-color: 				{color:Background};
+  		font: 							12px/20px "Lucida Grande", Arial, sans-serif;
+! 		color: 							{color:Body Text};
+! 		{block:IfEnableTextShadow}text-shadow: 1px 1px 2px black;{/block:IfEnableTextShadow}
+  	}
+  	.clear { 
+  		clear: 							both; 
+--- 20,29 ----
+  	<style type="text/css">
+  	/* GLOBAL */
+  	body {
+! 		background-color: 				[% color.Background %];
+  		font: 							12px/20px "Lucida Grande", Arial, sans-serif;
+! 		color: 							[% color.Body_Text %];
+! 		[% IF opt.EnableTextShadow %]text-shadow: 1px 1px 2px black;[% END %]
+  	}
+  	.clear { 
+  		clear: 							both; 
+***************
+*** 51,57 ****
+  	}
+  	div#header h1 a {
+  		text-decoration: 				none;
+! 		color: 							{color:Header Text};
+  	}
+  	
+  	/* LEFT COLUMN (Nav links, description) */
+--- 51,57 ----
+  	}
+  	div#header h1 a {
+  		text-decoration: 				none;
+! 		color: 							[% color.Header_Text %];
+  	}
+  	
+  	/* LEFT COLUMN (Nav links, description) */
+***************
+*** 70,76 ****
+  		padding: 						0
+  	}
+  	div#meta-column ul li a {
+! 		color: 							{color:Links};
+  		text-decoration: 				none;
+  	}
+  	div#meta-column ul#navigation li {
+--- 70,76 ----
+  		padding: 						0
+  	}
+  	div#meta-column ul li a {
+! 		color: 							[% color.Links %];
+  		text-decoration: 				none;
+  	}
+  	div#meta-column ul#navigation li {
+***************
+*** 80,102 ****
+  	}
+  	div#meta-column ul#navigation li a {
+  		text-decoration: 				none;
+! 		color: 							{color:Links};
+  		font-weight: 					bold;
+  	}
+  	div#meta-column p {
+! 		color: 							{color:Body Text};
+  		font-size: 						12px;
+  		font-weight: 					bold;
+  		line-height: 					20px;
+  		font-family: 					Helvetica, Arial, sans-serif;
+  	}
+  	div#meta-column p a {
+! 		color: 							{color:Links};
+  		font-weight: 					bold;
+  		text-decoration: 				none;
+  	}
+  	div#meta-column div.description {
+! 		color: 							{color:Body Text};
+  		font-size: 						12px;
+  		font-weight: 					bold;
+  		line-height: 					20px;
+--- 80,102 ----
+  	}
+  	div#meta-column ul#navigation li a {
+  		text-decoration: 				none;
+! 		color: 							[% color.Links %];
+  		font-weight: 					bold;
+  	}
+  	div#meta-column p {
+! 		color: 							[% color.Body_Text %];
+  		font-size: 						12px;
+  		font-weight: 					bold;
+  		line-height: 					20px;
+  		font-family: 					Helvetica, Arial, sans-serif;
+  	}
+  	div#meta-column p a {
+! 		color: 							[% color.Links %];
+  		font-weight: 					bold;
+  		text-decoration: 				none;
+  	}
+  	div#meta-column div.description {
+! 		color: 							[% color.Body_Text %];
+  		font-size: 						12px;
+  		font-weight: 					bold;
+  		line-height: 					20px;
+***************
+*** 104,110 ****
+  		margin-top: 					10px;
+  	}
+  	div#meta-column div.description a {
+! 		color: 							{color:Links};
+  		font-weight: 					bold;
+  		text-decoration: 				none;
+  	}
+--- 104,110 ----
+  		margin-top: 					10px;
+  	}
+  	div#meta-column div.description a {
+! 		color: 							[% color.Links %];
+  		font-weight: 					bold;
+  		text-decoration: 				none;
+  	}
+***************
+*** 127,133 ****
+  		margin-bottom: 					60px;
+  	}
+  	div#content-column .post a {
+! 		color: 							{color:Links};
+  		font-weight: 					bold;
+  		text-decoration: 				none;
+  	}
+--- 127,133 ----
+  		margin-bottom: 					60px;
+  	}
+  	div#content-column .post a {
+! 		color: 							[% color.Links %];
+  		font-weight: 					bold;
+  		text-decoration: 				none;
+  	}
+***************
+*** 139,151 ****
+  		margin-bottom: 					10px;
+  	}
+  	div#content-column .post .date a {
+! 		color: 							{color:Links};
+  		text-decoration: 				none;
+  	}
+  	div#content-column .post .type {
+  		float: 							right;
+  		font: 							10px/16px Helvetica, Arial, sans-serif;
+! 		color: 							{color:Body Text};
+  		padding: 						0;
+  		text-transform: 				uppercase;
+  		margin-bottom: 					10px;
+--- 139,151 ----
+  		margin-bottom: 					10px;
+  	}
+  	div#content-column .post .date a {
+! 		color: 							[% color.Links %];
+  		text-decoration: 				none;
+  	}
+  	div#content-column .post .type {
+  		float: 							right;
+  		font: 							10px/16px Helvetica, Arial, sans-serif;
+! 		color: 							[% color.Body_Text %];
+  		padding: 						0;
+  		text-transform: 				uppercase;
+  		margin-bottom: 					10px;
+***************
+*** 158,164 ****
+  		font-family:					Helvetica, Arial, sans-serif;
+  	}
+  	div#content-column .post h2 a {
+! 		color: 							{color:Links} !important;
+  		text-decoration: 				none;
+  	}
+  	div#content-column .post p {
+--- 158,164 ----
+  		font-family:					Helvetica, Arial, sans-serif;
+  	}
+  	div#content-column .post h2 a {
+! 		color: 							[% color.Links %] !important;
+  		text-decoration: 				none;
+  	}
+  	div#content-column .post p {
+***************
+*** 172,183 ****
+  	}
+  	div#content-column .quote blockquote p {
+  		font: 							14px/20px Palatino, Georgia, serif;
+! 		color: 							{color:Body Text};
+  		font-style: 					italic;
+  	}
+  	div#content-column .quote blockquote {
+  		font: 							14px/20px Palatino, Georgia, serif;
+! 		color: 							{color:Body Text};
+  		font-style: 					italic;
+  	}
+  	div#content-column .quote .source {
+--- 172,183 ----
+  	}
+  	div#content-column .quote blockquote p {
+  		font: 							14px/20px Palatino, Georgia, serif;
+! 		color: 							[% color.Body_Text %];
+  		font-style: 					italic;
+  	}
+  	div#content-column .quote blockquote {
+  		font: 							14px/20px Palatino, Georgia, serif;
+! 		color: 							[% color.Body_Text %];
+  		font-style: 					italic;
+  	}
+  	div#content-column .quote .source {
+***************
+*** 238,244 ****
+  	}
+  	div#pagination a {
+  		text-decoration: 				none;
+! 		color: 							{color:Links};
+  		font-weight: 					bold;
+  	}
+  	div#pagination #pages {
+--- 238,244 ----
+  	}
+  	div#pagination a {
+  		text-decoration: 				none;
+! 		color: 							[% color.Links %];
+  		font-weight: 					bold;
+  	}
+  	div#pagination #pages {
+***************
+*** 255,261 ****
+      	list-style-type: 				none;
+  		}
+  		ol.notes a {
+! 		color: 							{color:Links};
+  		text-decoration: 				none;
+  	}
+  	ol.notes li.note {
+--- 255,261 ----
+      	list-style-type: 				none;
+  		}
+  		ol.notes a {
+! 		color: 							[% color.Links %];
+  		text-decoration: 				none;
+  	}
+  	ol.notes li.note {
+***************
+*** 282,294 ****
+      	border-color: 					#eee;
+      	padding: 						4px 10px;
+      	margin:							10px 0px 0px 25px;
+! 		color: 							{color:Body Text};
+  	}
+  
+  	ol.notes li.note blockquote a {
+      	text-decoration: 				none;
+  	}
+! 	{CustomCSS}
+  	</style>
+  
+  
+--- 282,294 ----
+      	border-color: 					#eee;
+      	padding: 						4px 10px;
+      	margin:							10px 0px 0px 25px;
+! 		color: 							[% color.Body_Text %];
+  	}
+  
+  	ol.notes li.note blockquote a {
+      	text-decoration: 				none;
+  	}
+! 	[% main.CustomCSS %]
+  	</style>
+  
+  
+***************
+*** 296,446 ****
+  <body>
+  	<div id="container">
+  		<div id="header">
+! 			<h1><a href="/">{Title}</a></h1>
+  		</div>
+  
+  		<div id="meta-column">
+  			<ul id="navigation">
+  				<li><a href="/archive">Archive</a></li>
+! 				<li><a href="{RSS}">Subscribe</a></li>
+  			</ul>
+  			<div class="clear"></div>
+  			
+  			<div class="description">
+! 				{Description}
+  				
+  				<p>Theme by <a href="http://tumblr.quisby.net">nostrich</a>.</p>
+  			</div>
+  			
+  			<div class="search">
+  				<form action="/search" method="get">
+! 				    <input type="text" name="q" value="{SearchQuery}" class="term"/>
+  				    <input type="submit" value="Search"/>
+  				</form>
+  			</div>
+  		</div>
+  
+  		<div id="content-column">
+! 			{block:Posts}
+! 			{block:Text}
+  			<div class="post text">
+! 				<p class="date"><a href="{Permalink}">{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</a></p>
+! 				<p class="type">Text {block:RebloggedFrom}reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>{/block:RebloggedFrom} {block:IfShowPostNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:IfShowPostNotes}</p>
+  				<div class="clear"></div>
+! 				{block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+! 				{Body}
+! 				{block:HasTags}<p class="tags">Tagged: {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</p>{/block:HasTags}
+  			</div>
+! 			{/block:Text}
+  			
+! 			{block:Photo}
+  			<div class="post photo">
+! 				<p class="date"><a href="{Permalink}">{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</a></p>
+! 				<p class="type">Photo {block:RebloggedFrom}reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>{/block:RebloggedFrom} {block:IfShowPostNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:IfShowPostNotes}</p>
+  				<div class="clear"></div>
+! 				{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+! 				{block:Caption}{Caption}{/block:Caption} 
+  				<div class="clear"></div>
+! 				{block:HasTags}<p class="tags">Tagged: {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</p>{/block:HasTags}
+  			</div>
+! 			{/block:Photo} 
+  			
+! 			{block:Quote}
+  			<div class="post quote">
+! 				<p class="date"><a href="{Permalink}">{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</a></p>
+! 				<p class="type">Quote {block:RebloggedFrom}reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>{/block:RebloggedFrom} {block:IfShowPostNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:IfShowPostNotes}</p>
+  				<div class="clear"></div>
+! 				<blockquote>{Quote}</blockquote>
+! 				<div class="source">{block:Source}&mdash; {Source}{/block:Source}</div>
+! 				{block:HasTags}<p class="tags">Tagged: {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</p>{/block:HasTags}
+  			</div>
+! 			{/block:Quote} 
+  			
+! 			{block:Link}
+  			<div class="post link">
+! 				<p class="date"><a href="{Permalink}">{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</a></p>
+! 				<p class="type">Link {block:RebloggedFrom}reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>{/block:RebloggedFrom} {block:IfShowPostNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:IfShowPostNotes}</p>
+  				<div class="clear"></div>
+! 				<h2><a href="{URL}" {Target}>{Name} &rarr;</a></h2>
+! 				{block:Description}{Description} {/block:Description} 
+! 				{block:HasTags}<p class="tags">Tagged: {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</p>{/block:HasTags}
+  			</div>
+! 			{/block:Link} 
+  			
+! 			{block:Chat}
+  			<div class="post chat">
+! 				<p class="date"><a href="{Permalink}">{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</a></p>
+! 				<p class="type">Chat {block:RebloggedFrom}reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>{/block:RebloggedFrom} {block:IfShowPostNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:IfShowPostNotes}</p>
+  				<div class="clear"></div>
+! 				{block:Title}<h2>{Title}</h2>{/block:Title} 
+  				<ul>
+! 					{block:Lines}<li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>{/block:Lines}
+  				</ul>
+! 				{block:HasTags}<p class="tags">Tagged: {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</p>{/block:HasTags}
+  			</div>
+! 			{/block:Chat} 
+  			
+! 			{block:Audio}
+  			<div class="post audio">
+! 				<p class="date"><a href="{Permalink}">{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</a></p>
+! 				<p class="type">Audio with {FormattedPlayCount} plays {block:RebloggedFrom}reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>{/block:RebloggedFrom} {block:IfShowPostNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:IfShowPostNotes}</p>
+  				<div class="clear"></div>
+! 				{AudioPlayerWhite}
+! 				{block:Caption}{Caption}{/block:Caption}
+! 				{block:HasTags}<p class="tags">Tagged: {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</p>{/block:HasTags}
+  			</div>
+! 			{/block:Audio} 
+  			
+! 			{block:Video}
+  			<div class="post video">
+! 				<p class="date"><a href="{Permalink}">{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</a></p>
+! 				<p class="type">Video {block:RebloggedFrom}reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>{/block:RebloggedFrom} {block:IfShowPostNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:IfShowPostNotes}</p>
+  				<div class="clear"></div>
+! 				{Video-500}
+! 				{block:Caption}{Caption}{/block:Caption}
+  				<div class="clear"></div>
+! 				{block:HasTags}<p class="tags">Tagged: {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</p>{/block:HasTags}
+  			</div>
+! 			{/block:Video} 
+  			
+! 			{block:IfShowPostNotes}
+! 			{Block:PostNotes}
+! 			{PostNotes}
+! 			{/Block:PostNotes}
+! 			{/block:IfShowPostNotes}
+  
+! 			{block:IfNotShowPostNotes}
+! 			{/block:IfNotShowPostNotes}
+  			
+! 			{/block:Posts}	
+  
+  			
+! 			{block:Pagination}
+  			<div id="pagination">
+  				<div id="pages">
+! 					<p>Page {CurrentPage} of {TotalPages}</p>
+  				</div>
+  				<div id="nav-pages">
+  					<p>
+! 						{block:NextPage}<a href="{NextPage}">&larr; Previous page</a>{/block:NextPage}
+  						&bull;
+! 						{block:PreviousPage}<a href="{PreviousPage}">Next page &rarr;</a>{/block:PreviousPage}
+  					</p>
+  				</div>
+  			</div>
+! 			{/block:Pagination}
+  			
+! 			{block:PermalinkPagination}
+  			<div id="pagination">
+  				<div id="nav-pages">
+  					<p>
+! 						{block:NextPost}<a href="{NextPost}">&larr; Previous post</a>{/block:NextPost}
+  						&bull;
+! 						{block:PreviousPost}<a href="{PreviousPost}">Next post &rarr;</a>{/block:PreviousPost}
+  					</p>
+  				</div>
+  			</div>
+! 			{/block:PermalinkPagination}
+  
+  		</div>
+  		<div class="clear"></div>
+--- 296,446 ----
+  <body>
+  	<div id="container">
+  		<div id="header">
+! 			<h1><a href="/">[% main.Title %]</a></h1>
+  		</div>
+  
+  		<div id="meta-column">
+  			<ul id="navigation">
+  				<li><a href="/archive">Archive</a></li>
+! 				<li><a href="[% main.RSS %]">Subscribe</a></li>
+  			</ul>
+  			<div class="clear"></div>
+  			
+  			<div class="description">
+! 				[% main.Description %]
+  				
+  				<p>Theme by <a href="http://tumblr.quisby.net">nostrich</a>.</p>
+  			</div>
+  			
+  			<div class="search">
+  				<form action="/search" method="get">
+! 				    <input type="text" name="q" value="[% main.SearchQuery %]" class="term"/>
+  				    <input type="submit" value="Search"/>
+  				</form>
+  			</div>
+  		</div>
+  
+  		<div id="content-column">
+! 			[% FOREACH p = posts %]
+! 			[% IF p.Text %]
+  			<div class="post text">
+! 				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+! 				<p class="type">Text [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+  				<div class="clear"></div>
+! 				[% IF p.Title %]<h2><a href="[% p.Permalink %]">[% p.Title %]</a></h2>[% END %]
+! 				[% p.Body %]
+! 				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+  			</div>
+! 			[% END %]
+  			
+! 			[% IF p.Photo %]
+  			<div class="post photo">
+! 				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+! 				<p class="type">Photo [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+  				<div class="clear"></div>
+! 				[% p.LinkOpenTag %]<img src="[% p.PhotoURL_500 %]" alt="[% p.PhotoAlt %]" />[% p.LinkCloseTag %]
+! 				[% IF p.Caption %][% p.Caption %][% END %] 
+  				<div class="clear"></div>
+! 				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+  			</div>
+! 			[% END %] 
+  			
+! 			[% IF p.Quote %]
+  			<div class="post quote">
+! 				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+! 				<p class="type">Quote [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+  				<div class="clear"></div>
+! 				<blockquote>[% p.Quote %]</blockquote>
+! 				<div class="source">[% IF p.Source %]&mdash; [% p.Source %][% END %]</div>
+! 				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+  			</div>
+! 			[% END %] 
+  			
+! 			[% IF p.Link %]
+  			<div class="post link">
+! 				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+! 				<p class="type">Link [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+  				<div class="clear"></div>
+! 				<h2><a href="[% p.URL %]" [% p.Target %]>[% p.Name %] &rarr;</a></h2>
+! 				[% IF p.Description %][% p.Description %] [% END %] 
+! 				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+  			</div>
+! 			[% END %] 
+  			
+! 			[% IF p.Chat %]
+  			<div class="post chat">
+! 				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+! 				<p class="type">Chat [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+  				<div class="clear"></div>
+! 				[% IF p.Title %]<h2>[% p.Title %]</h2>[% END %] 
+  				<ul>
+! 					[% IF p.Lines %]<li>[% IF p.Label %]<strong>[% p.Label %]</strong>[% END %] [% p.Line %]</li>[% END %]
+  				</ul>
+! 				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+  			</div>
+! 			[% END %] 
+  			
+! 			[% IF p.Audio %]
+  			<div class="post audio">
+! 				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+! 				<p class="type">Audio with [% p.FormattedPlayCount %] plays [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+  				<div class="clear"></div>
+! 				[% p.AudioPlayerWhite %]
+! 				[% IF p.Caption %][% p.Caption %][% END %]
+! 				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+  			</div>
+! 			[% END %] 
+  			
+! 			[% IF p.Video %]
+  			<div class="post video">
+! 				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+! 				<p class="type">Video [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+  				<div class="clear"></div>
+! 				[% p.Video_500 %]
+! 				[% IF p.Caption %][% p.Caption %][% END %]
+  				<div class="clear"></div>
+! 				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+  			</div>
+! 			[% END %] 
+  			
+! 			[% IF opt.ShowPostNotes %]
+! 			[% IF p.PostNotes %]
+! 			[% p.PostNotes %]
+! 			[% END %]
+! 			[% END %]
+  
+! 			[% IF opt.NotShowPostNotes %]
+! 			[% END %]
+  			
+! 			[% END %]	
+  
+  			
+! 			[% IF main.Pagination %]
+  			<div id="pagination">
+  				<div id="pages">
+! 					<p>Page [% main.CurrentPage %] of [% main.TotalPages %]</p>
+  				</div>
+  				<div id="nav-pages">
+  					<p>
+! 						[% IF main.NextPage %]<a href="[% main.NextPage %]">&larr; Previous page</a>[% END %]
+  						&bull;
+! 						[% IF main.PreviousPage %]<a href="[% main.PreviousPage %]">Next page &rarr;</a>[% END %]
+  					</p>
+  				</div>
+  			</div>
+! 			[% END %]
+  			
+! 			[% IF main.PermalinkPagination %]
+  			<div id="pagination">
+  				<div id="nav-pages">
+  					<p>
+! 						[% IF main.NextPost %]<a href="[% main.NextPost %]">&larr; Previous post</a>[% END %]
+  						&bull;
+! 						[% IF main.PreviousPost %]<a href="[% main.PreviousPost %]">Next post &rarr;</a>[% END %]
+  					</p>
+  				</div>
+  			</div>
+! 			[% END %]
+  
+  		</div>
+  		<div class="clear"></div>

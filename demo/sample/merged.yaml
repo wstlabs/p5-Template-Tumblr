@@ -1,0 +1,89 @@
+---
+color:
+  Background: '#2b2b2b'
+  Body_Text: '#f2e3c6'
+  Header_Text: '#ffc6a5'
+  Links: '#e6324b'
+main:
+  CustomCSS: /* custom CSS goes here */
+  Description: All things to all people.
+  Favicon: http://18.media.tumblr.com/avatar_ed2edc19affc_16.png
+  MetaDescription: All things to all people.
+  RSS: http://theoryofeverything.tumblr.com/rss
+  Title: Theory of Everything
+opt:
+  EnableTextShadow: 1
+  ShowPostNotes: 1
+posts:
+  - Body: |
+      <p><img src="http://media.tumblr.com/tumblr_ksai958LQr1qa64s0.jpg"/></p>
+      <p>phaselus ille quem videtis hospites</p>
+      <p>ait fuisse navium celerrimus</p>
+      <p>neque ullus natantis impetum trabis</p>
+      <p>nequisse praeterire sive palmulis</p>
+      <p>opus foret volare sive linteo</p>
+      <p>et hoc negat minacis Hadriatici</p>
+      <p>negare litus insulasve Cycladas</p>
+      <p>Rhodumque nobilem horridamque Thraciam</p>
+      <p>Propontida trucemve Ponticum sinum</p>
+      <p>ubi iste post phaselus antea fuit</p>
+      <p>comata silva nam Cytorioin iugo</p>
+      <p>loquente saepe sibilum edidit coma</p>
+      <p>Amastri Pontica et Cytore buxifer</p>
+      <p>tibi haec fuisse et esse cognitissima</p>
+      <p>ait phaselus ultima ex origine</p>
+      <p>tuo stetisse dicit in cacumine</p>
+      <p>tuo imbuisse palmulas in aequore</p>
+      <p>et inde tot per impotentia freta</p>
+      <p>erum tulisse laeva sive dextera</p>
+      <p>vocaret aura sive utrumque Iuppiter</p>
+      <p>simul secundus incidisset in pedem</p>
+      <p>neque ulla vota litoralibus deis</p>
+      <p>sibi esse facta cum veniret a mari</p>
+      <p>novissimo hunc ad usque limpidum lacum</p>
+      <p>sed haec prius fuere nunc recondita</p>
+      <p>senet quiete seque dedicat tibi</p>
+      <p>gemelle Castor et gemelle Castoris</p>
+    DayOfMonth: 29
+    DayOfMonthSuffix: th
+    Month: October
+    Permalink: http://theoryofeverything.tumblr.com/post/227148220/quattuor
+    Text: 1
+    Title: Quattuor
+    Year: 2009
+  - Body: |
+      <p>Passer,<sup></sup>deliciae meae puellae,</p>
+      <p>quicum ludere, quem in sinu tenere,</p>
+      <p>cui primum digitum dare appetenti</p>
+      <p>et acris solet incitare morsus,</p>
+      <p>cum desiderio meo nitenti</p>
+      <p>carum nescioquid lubet iocari,</p>
+      <p>ut solaciolum sui doloris,</p>
+      <p>credo, ut tum gravis acquiescat ardor;</p>
+      <p>tecum<sup></sup>ludere sicut ipsa possem</p>
+      <p>et tristis animi levare curas!</p>
+    DayOfMonth: 29
+    DayOfMonthSuffix: th
+    Month: October
+    Permalink: http://theoryofeverything.tumblr.com/post/227142357/duo
+    Text: 1
+    Title: Duo
+    Year: 2009
+  - Body: |
+      <p>cui dono lepidum novum libellum</p>
+      <p>arida modo pumice expolitum</p>
+      <p>Corneli tibi namque tu solebas</p>
+      <p>meas esse aliquid putare nugas</p>
+      <p>iam tum cum ausus es unus Italorum</p>
+      <p>omne aevum tribus explicare cartis</p>
+      <p>doctis Iuppiter et laboriosis</p>
+      <p>quare habe tibi quidquid hoc libelli</p>
+      <p>qualecumque quod o<sup></sup>patrona virgo</p>
+      <p>plus uno maneat perenne saeclo</p>
+    DayOfMonth: 29
+    DayOfMonthSuffix: th
+    Month: October
+    Permalink: http://theoryofeverything.tumblr.com/post/227133157/unus
+    Text: 1
+    Title: Unus
+    Year: 2009

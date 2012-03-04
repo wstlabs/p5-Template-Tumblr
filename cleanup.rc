@@ -1,0 +1,6 @@
+# remove sundry temp files
+find . -name '*.swp' -exec \rm {} \;
+find . -name '*~' -exec \rm {} \;
+\rm Makefile.old if -f Makefile.old
+
+

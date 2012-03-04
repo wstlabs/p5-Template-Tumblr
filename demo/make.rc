@@ -1,0 +1,4 @@
+perl -I../blib/lib emit.pl > output/data.yaml
+perl -I../blib/lib proc.pl  input/theme.tblr output/data.yaml > output/page.htm
+perl -I../blib/lib meta.pl  input/theme.tblr output/data.yaml > output/merged.yaml
+perl -I../blib/lib parse.pl input/theme.tblr output/data.yaml > output/template.tt

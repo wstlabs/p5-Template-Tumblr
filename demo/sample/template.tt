@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	[% IF main.Description %]<meta name="description" content="[% main.MetaDescription %]" />[% END %]
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>[% main.Title %][% IF main.PostSummary %] - [% main.PostSummary %][% END %]</title>
+	<link rel="icon" href="[% main.Favicon %]"/>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="[% main.RSS %]"/>
+	<meta name="viewport" content="width=775"/> <!-- iPhone -->
+	<meta name="if:Show post notes" content ="1"/>
+	<meta name="if:Enable text shadow" content ="1"/>
+	
+	<!-- Custom Colours -->
+	<meta name="color:Background" content="#2b2b2b" />
+	<meta name="color:Header Text" content="#ffc6a5" />
+	<meta name="color:Body Text" content="#f2e3c6" />
+	<meta name="color:Links" content="#e6324b" />
+	
+	<style type="text/css">
+	/* GLOBAL */
+	body {
+		background-color: 				[% color.Background %];
+		font: 							12px/20px "Lucida Grande", Arial, sans-serif;
+		color: 							[% color.Body_Text %];
+		[% IF opt.EnableTextShadow %]text-shadow: 1px 1px 2px black;[% END %]
+	}
+	.clear { 
+		clear: 							both; 
+	}
+	div#container {
+		width: 							770px;
+		margin: 						40px auto;
+		padding: 						0 40px 40px 40px;
+	}
+	
+	/* HEADER */
+	div#header {
+		padding: 						10px 0;
+		margin-bottom: 					20px;
+	}
+	div#header h1 {
+		margin: 						10px 0;
+		text-align:						right;
+		text-transform:					uppercase;
+		font-size: 						46px;
+		font-weight: 					bold;
+		line-height: 					40px;
+		text-spacing: 					-10px;
+		font-family: 					Helvetica;
+	}
+	div#header h1 a {
+		text-decoration: 				none;
+		color: 							[% color.Header_Text %];
+	}
+	
+	/* LEFT COLUMN (Nav links, description) */
+	div#meta-column {
+		width: 							150px;
+		float: 							left;
+	}
+	div#meta-column ul#navigation {
+		margin: 						0;
+		padding: 						0;
+		list-style-type: 				none;
+	}
+	div#meta-column ul {
+		list-style-type: 				none;
+		margin: 						0 0 5px 15px;
+		padding: 						0
+	}
+	div#meta-column ul li a {
+		color: 							[% color.Links %];
+		text-decoration: 				none;
+	}
+	div#meta-column ul#navigation li {
+		display: 						inline;
+		float: 							left;
+		padding-right:					10px;
+	}
+	div#meta-column ul#navigation li a {
+		text-decoration: 				none;
+		color: 							[% color.Links %];
+		font-weight: 					bold;
+	}
+	div#meta-column p {
+		color: 							[% color.Body_Text %];
+		font-size: 						12px;
+		font-weight: 					bold;
+		line-height: 					20px;
+		font-family: 					Helvetica, Arial, sans-serif;
+	}
+	div#meta-column p a {
+		color: 							[% color.Links %];
+		font-weight: 					bold;
+		text-decoration: 				none;
+	}
+	div#meta-column div.description {
+		color: 							[% color.Body_Text %];
+		font-size: 						12px;
+		font-weight: 					bold;
+		line-height: 					20px;
+		font-family: 					Helvetica;
+		margin-top: 					10px;
+	}
+	div#meta-column div.description a {
+		color: 							[% color.Links %];
+		font-weight: 					bold;
+		text-decoration: 				none;
+	}
+	
+	/* SEARCH */
+	div#meta-column div.search {
+		margin-top:						10px;
+	}
+	div#meta-column div.search form input.term {
+		width:							150px;
+	}
+	/* MAIN CONTENT COLUMN */
+	div#content-column {
+		width: 							500px;
+		float: 							right;
+	}
+	div#content-column .post {
+		border-bottom: 					none;
+		padding-bottom: 				30px;
+		margin-bottom: 					60px;
+	}
+	div#content-column .post a {
+		color: 							[% color.Links %];
+		font-weight: 					bold;
+		text-decoration: 				none;
+	}
+	div#content-column .post .date {
+		float: 							left;
+		font: 							10px/16px Helvetica, Arial, sans-serif;
+		padding: 						0;
+		text-transform: 				uppercase;
+		margin-bottom: 					10px;
+	}
+	div#content-column .post .date a {
+		color: 							[% color.Links %];
+		text-decoration: 				none;
+	}
+	div#content-column .post .type {
+		float: 							right;
+		font: 							10px/16px Helvetica, Arial, sans-serif;
+		color: 							[% color.Body_Text %];
+		padding: 						0;
+		text-transform: 				uppercase;
+		margin-bottom: 					10px;
+	}
+	div#content-column .post h2 {
+		margin: 						0px 0 10px 0;
+		font-weight: 					normal;
+		text-transform: 				uppercase;
+		font-size: 						14px;
+		font-family:					Helvetica, Arial, sans-serif;
+	}
+	div#content-column .post h2 a {
+		color: 							[% color.Links %] !important;
+		text-decoration: 				none;
+	}
+	div#content-column .post p {
+		margin: 						0;
+		padding: 						0 0 10px 0;
+	}
+	
+	/* QUOTE SPECIFIC */
+	div#content-column .quote blockquote {
+		margin: 						0;
+	}
+	div#content-column .quote blockquote p {
+		font: 							14px/20px Palatino, Georgia, serif;
+		color: 							[% color.Body_Text %];
+		font-style: 					italic;
+	}
+	div#content-column .quote blockquote {
+		font: 							14px/20px Palatino, Georgia, serif;
+		color: 							[% color.Body_Text %];
+		font-style: 					italic;
+	}
+	div#content-column .quote .source {
+		font-size: 						10px;
+		text-align: 					right;
+		padding: 						0;
+	}
+	
+	/* TEXT SPECIFIC */
+	div#content-column .text img {
+		max-width: 						100%;
+		border: 						3px solid #000;
+		margin: 						0 auto 8px auto;
+		display: 						block;
+	}
+	
+	/* PHOTO SPECIFIC */
+	div#content-column .photo img {
+		border: 						3px solid #000;
+		margin: 						0 auto 8px auto;
+		display: 						block;
+	}
+	
+	/* VIDEO SPECIFIC */
+	div#content-column .video object {
+		border: 						3px solid #000;
+		margin-bottom:					8px;
+	}
+	
+	/* CHAT SPECIFIC */
+	div#content-column .chat ul {
+		padding: 						0;
+		margin: 						0;
+		list-style-type: 				none;
+	}
+	div#content-column .chat ul li {
+		padding: 						5px;
+		margin: 						5px 0;
+	}
+	
+	/* AUDIO SPECIFIC */
+	div#content-column .audio embed {
+		margin-bottom: 					10px;
+	}
+	
+	/* TAGS */
+	div#content-column .post p.tags {
+		font-style: 					italic;
+		font-size: 						11px;
+	}
+	p.tags a {
+		padding: 						0 5px;
+	}
+	/* PAGINATION */
+	div#pagination {
+		font: 							12px/14px Helvetica, Arial, sans-serif;
+		font-style: 					italic;
+	}
+	div#pagination a {
+		text-decoration: 				none;
+		color: 							[% color.Links %];
+		font-weight: 					bold;
+	}
+	div#pagination #pages {
+		float: 							left;
+	}
+	div#pagination #nav-pages {
+		float: 							right;
+	}
+	
+	/* NOTES */
+	ol.notes {
+    	padding: 						0px;
+    	margin: 						25px 0px;
+    	list-style-type: 				none;
+		}
+		ol.notes a {
+		color: 							[% color.Links %];
+		text-decoration: 				none;
+	}
+	ol.notes li.note {
+    	padding: 						10px;
+	}
+
+	ol.notes li.note img.avatar {
+    	vertical-align:					-4px;
+    	margin-right:			 		10px;
+    	width: 							16px;
+    	height:							16px;
+		border: 						2px solid #000;
+	}
+
+	ol.notes li.note span.action {
+    	font-weight: 					bold;
+	}
+
+	ol.notes li.note .answer_content {
+    	font-weight: 					normal;
+	}
+
+	ol.notes li.note blockquote {
+    	border-color: 					#eee;
+    	padding: 						4px 10px;
+    	margin:							10px 0px 0px 25px;
+		color: 							[% color.Body_Text %];
+	}
+
+	ol.notes li.note blockquote a {
+    	text-decoration: 				none;
+	}
+	[% main.CustomCSS %]
+	</style>
+
+
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1><a href="/">[% main.Title %]</a></h1>
+		</div>
+
+		<div id="meta-column">
+			<ul id="navigation">
+				<li><a href="/archive">Archive</a></li>
+				<li><a href="[% main.RSS %]">Subscribe</a></li>
+			</ul>
+			<div class="clear"></div>
+			
+			<div class="description">
+				[% main.Description %]
+				
+				<p>Theme by <a href="http://tumblr.quisby.net">nostrich</a>.</p>
+			</div>
+			
+			<div class="search">
+				<form action="/search" method="get">
+				    <input type="text" name="q" value="[% main.SearchQuery %]" class="term"/>
+				    <input type="submit" value="Search"/>
+				</form>
+			</div>
+		</div>
+
+		<div id="content-column">
+			[% FOREACH p = posts %]
+			[% IF p.Text %]
+			<div class="post text">
+				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+				<p class="type">Text [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+				<div class="clear"></div>
+				[% IF p.Title %]<h2><a href="[% p.Permalink %]">[% p.Title %]</a></h2>[% END %]
+				[% p.Body %]
+				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+			</div>
+			[% END %]
+			
+			[% IF p.Photo %]
+			<div class="post photo">
+				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+				<p class="type">Photo [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+				<div class="clear"></div>
+				[% p.LinkOpenTag %]<img src="[% p.PhotoURL_500 %]" alt="[% p.PhotoAlt %]" />[% p.LinkCloseTag %]
+				[% IF p.Caption %][% p.Caption %][% END %] 
+				<div class="clear"></div>
+				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+			</div>
+			[% END %] 
+			
+			[% IF p.Quote %]
+			<div class="post quote">
+				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+				<p class="type">Quote [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+				<div class="clear"></div>
+				<blockquote>[% p.Quote %]</blockquote>
+				<div class="source">[% IF p.Source %]&mdash; [% p.Source %][% END %]</div>
+				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+			</div>
+			[% END %] 
+			
+			[% IF p.Link %]
+			<div class="post link">
+				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+				<p class="type">Link [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+				<div class="clear"></div>
+				<h2><a href="[% p.URL %]" [% p.Target %]>[% p.Name %] &rarr;</a></h2>
+				[% IF p.Description %][% p.Description %] [% END %] 
+				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+			</div>
+			[% END %] 
+			
+			[% IF p.Chat %]
+			<div class="post chat">
+				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+				<p class="type">Chat [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+				<div class="clear"></div>
+				[% IF p.Title %]<h2>[% p.Title %]</h2>[% END %] 
+				<ul>
+					[% IF p.Lines %]<li>[% IF p.Label %]<strong>[% p.Label %]</strong>[% END %] [% p.Line %]</li>[% END %]
+				</ul>
+				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+			</div>
+			[% END %] 
+			
+			[% IF p.Audio %]
+			<div class="post audio">
+				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+				<p class="type">Audio with [% p.FormattedPlayCount %] plays [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+				<div class="clear"></div>
+				[% p.AudioPlayerWhite %]
+				[% IF p.Caption %][% p.Caption %][% END %]
+				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+			</div>
+			[% END %] 
+			
+			[% IF p.Video %]
+			<div class="post video">
+				<p class="date"><a href="[% p.Permalink %]">[% p.DayOfMonth %][% p.DayOfMonthSuffix %] [% p.Month %] [% p.Year %]</a></p>
+				<p class="type">Video [% IF p.RebloggedFrom %]reblogged from <a href="[% p.ReblogParentURL %]">[% p.ReblogParentTitle %]</a>[% END %] [% IF opt.ShowPostNotes %][% IF p.NoteCount %]with [% p.NoteCountWithLabel %][% END %][% END %]</p>
+				<div class="clear"></div>
+				[% p.Video_500 %]
+				[% IF p.Caption %][% p.Caption %][% END %]
+				<div class="clear"></div>
+				[% IF p.HasTags %]<p class="tags">Tagged: [% IF p.Tags %]<a href="[% p.TagURL %]">[% p.Tag %]</a>[% END %]</p>[% END %]
+			</div>
+			[% END %] 
+			
+			[% IF opt.ShowPostNotes %]
+			[% IF p.PostNotes %]
+			[% p.PostNotes %]
+			[% END %]
+			[% END %]
+
+			[% IF opt.NotShowPostNotes %]
+			[% END %]
+			
+			[% END %]	
+
+			
+			[% IF main.Pagination %]
+			<div id="pagination">
+				<div id="pages">
+					<p>Page [% main.CurrentPage %] of [% main.TotalPages %]</p>
+				</div>
+				<div id="nav-pages">
+					<p>
+						[% IF main.NextPage %]<a href="[% main.NextPage %]">&larr; Previous page</a>[% END %]
+						&bull;
+						[% IF main.PreviousPage %]<a href="[% main.PreviousPage %]">Next page &rarr;</a>[% END %]
+					</p>
+				</div>
+			</div>
+			[% END %]
+			
+			[% IF main.PermalinkPagination %]
+			<div id="pagination">
+				<div id="nav-pages">
+					<p>
+						[% IF main.NextPost %]<a href="[% main.NextPost %]">&larr; Previous post</a>[% END %]
+						&bull;
+						[% IF main.PreviousPost %]<a href="[% main.PreviousPost %]">Next post &rarr;</a>[% END %]
+					</p>
+				</div>
+			</div>
+			[% END %]
+
+		</div>
+		<div class="clear"></div>
+	
+	</div>
+
+	</div> <!-- container -->
+
+</body>
+</html>
