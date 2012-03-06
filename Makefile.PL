@@ -7,7 +7,7 @@ WriteMakefile(
     'PREREQ_PM'		=> {
 		'Template' => 2.22,
         'HTML::Parser' => 3.68,
-        'Assert::Std ' => 0.001,
+        'Assert::Std' => 0.001,
         'Log::EZ' => 0.001,
 	},
 );

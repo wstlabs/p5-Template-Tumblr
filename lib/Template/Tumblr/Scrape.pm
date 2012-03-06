@@ -5,7 +5,7 @@ package Template::Tumblr::Scrape;
 use strict;
 use warnings;
 use HTML::Parser;
-use Assert::Types qw(:all);
+use Assert::Std qw(:types);
 use Carp;
 
 use base 'Exporter';
