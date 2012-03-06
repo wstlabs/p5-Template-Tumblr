@@ -3,7 +3,7 @@ use warnings;
 use YAML;
 use Template::Tumblr::Parser; 
 use Getopt::Long;
-use Log::Inline;
+use Log::EZ;
 
 GetVerbose();
 

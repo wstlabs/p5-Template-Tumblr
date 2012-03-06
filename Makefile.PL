@@ -8,7 +8,7 @@ WriteMakefile(
 		'Template' => 0,
         'HTML::Parser' => 0,
         'Assert::Types' => 0,
-        'Log::Inline' => 0,
+        'Log::EZ' => 0,
 	},
 );
 

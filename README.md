@@ -32,7 +32,7 @@ Prerequisites
   HTML::Parser
   Template-Toolkit
   YAML (for the demos) 
-  Log::Inline 
+  Log::EZ;
   Assert::Types 
   Carp
 

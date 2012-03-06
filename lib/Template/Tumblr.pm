@@ -10,7 +10,7 @@ use Template::Tumblr::Parser;
 use Template::Tumblr::Scrape;
 use Carp;
 
-our $VERSION = '0.01';
+our $VERSION = '0.001';
 
 sub new {
 	my ($proto,$cfg) = @_;
