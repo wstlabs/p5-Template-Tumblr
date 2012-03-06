@@ -10,7 +10,7 @@ use Template::Tumblr::Parser;
 use Template::Tumblr::Scrape;
 use Carp;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 sub new {
     my ($proto,$cfg) = @_;
@@ -32,9 +32,9 @@ sub new {
 sub process {
     my ($self, $tblr, $vars, $outs) = (shift,shift,shift,shift); 
     my $opts = 
-	    @_ == 1 && UNIVERSAL::isa($_[0], 'HASH') ? $_[0] : 
-	    @_ % 2 ? { @_, undef } : # avoids warning on odd-numbered hashes 
-	    { @_ };
+        @_ == 1 && UNIVERSAL::isa($_[0], 'HASH') ? $_[0] : 
+        @_ % 2 ? { @_, undef } : # avoids warning on odd-numbered hashes 
+        { @_ };
     # (binmode) 
     my $tt = $self->{TT};
     my $meta = extract_meta($tblr);
