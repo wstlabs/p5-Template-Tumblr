@@ -15,27 +15,27 @@ use Exporter::Tidy
 
 
 sub extract_attr  {
-	my ($html,$tag) = @_;
-	confess "need a tag" unless defined $tag;
-	extract_attr_where ($html, sub { $_[0] eq $tag })
+    my ($html,$tag) = @_;
+    confess "need a tag" unless defined $tag;
+    extract_attr_where ($html, sub { $_[0] eq $tag })
 }
 
 sub extract_attr_where  {
-	my ($html,$visit) = @_;
-	assert_scalar_ref($html);
-	assert_code_ref($visit);
-	my @attr;
-	my $p = HTML::Parser->new( 
-		api_version => 3,
-		start_h => [ 
+    my ($html,$visit) = @_;
+    assert_scalar_ref($html);
+    assert_code_ref($visit);
+    my @attr;
+    my $p = HTML::Parser->new( 
+        api_version => 3,
+        start_h => [ 
             sub { 
-			    push @attr, $_[1] if $visit->(@_) 
-		    }, 'tagname,attr' 
+                push @attr, $_[1] if $visit->(@_) 
+            }, 'tagname,attr' 
         ],
-		marked_sections => 1
-	);
-	$p->parse($$html);
-	\@attr
+        marked_sections => 1
+    );
+    $p->parse($$html);
+    \@attr
 }
 
 1;
