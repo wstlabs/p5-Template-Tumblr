@@ -8,6 +8,7 @@ WriteMakefile(
 		'Template' => 2.22,
         'HTML::Parser' => 3.68,
         'Assert::Std' => 0.001,
+        'Exporter::Tidy' => 0.07,
         'Log::EZ' => 0.001,
 	},
 );

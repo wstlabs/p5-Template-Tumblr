@@ -5,14 +5,13 @@ package Template::Tumblr::Scrape;
 use strict;
 use warnings;
 use HTML::Parser;
-use Assert::Std qw(:types);
 use Carp;
-
-use base 'Exporter';
-our @EXPORT = qw/
-	extract_attr
-	extract_attr_where
-/;
+use Assert::Std qw(:types);
+use Exporter::Tidy
+    default => [qw|
+	    extract_attr
+	    extract_attr_where
+    |];
 
 
 sub extract_attr  {
