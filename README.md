@@ -33,7 +33,7 @@ Prerequisites
   Template-Toolkit
   YAML (for the demos) 
   Log::EZ;
-  Assert::Types 
+  Assert::Std
   Carp
 
 
