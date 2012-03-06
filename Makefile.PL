@@ -1,7 +1,7 @@
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    'AUTHOR'  => 'highlinelabs (nobody@null.org)',
+    'AUTHOR'  => 'WST (nobody@null.org)',
     'NAME'		=> 'Template-Tumbler',
     'VERSION_FROM'	=> 'lib/Template/Tumblr.pm',
     'PREREQ_PM'		=> {
