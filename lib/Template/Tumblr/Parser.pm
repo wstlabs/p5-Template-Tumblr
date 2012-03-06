@@ -35,14 +35,14 @@
 package Template::Tumblr::Parser;
 use strict;
 use warnings;
-use Log::Inline;
+use Log::EZ;
 use Carp;
 
 sub new {
-	my $class = shift;
-	bless {
-		's' => [], 'ctx' => 'main'
-	}, $class
+    my $class = shift;
+    bless {
+        's' => [], 'ctx' => 'main'
+    }, $class
 }
 
 # main challenge in parsing Tumblr markup is to distinguish it from 
