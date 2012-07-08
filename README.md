@@ -1,6 +1,12 @@
+# NAME
 
 Template::Tumbler - a simple TT-based templating engine for Tumbler themes
 
+# SYNOPSIS
+
+See the directory <code>demos</code>, and in particular the <code>README.md</code> there for sample usage.
+
+# DESCRIPTION 
 Proof of concept implementation; see the 'demos' dir for sample scripts 
 and test inputs / outputs based on the ToE blog:
   
@@ -17,27 +23,8 @@ More info available in the comments to the main parser class:
 
     lib/Template/Tumbler/Parser.pm
 
-Installation
-============
+# CAVEATS
 
-Follows the usual CPAN installation pattern:
-  
-   perl Makefile.PL
-   make test
-   make install
-
-Prerequisites
-=============
-  
-  HTML::Parser
-  Template-Toolkit
-  YAML (for the demos) 
-  Log::EZ;
-  Assert::Std
-  Carp
-
-
-
-
+Basically, this is a just toy implementation, and most likely won't be released to CPAN.  Also, its workings (limited though they are) are tied to the vintage 2009 Tumbler service, and most likely quite a few things have changed since then. 
 
 

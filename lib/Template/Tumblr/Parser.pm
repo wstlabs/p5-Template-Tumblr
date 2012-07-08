@@ -60,7 +60,7 @@ sub new {
 # it's assumed to be a CSS declaration.
 # 
 sub parse {
-my ($self,$text,$info) = @_;
+    my ($self,$text,$info) = @_;
     $text =~ s{\{(
         \/?\w+ | \/?\w+\:\w+
     )\}}{&_handle($self,$1)}gxmse;
